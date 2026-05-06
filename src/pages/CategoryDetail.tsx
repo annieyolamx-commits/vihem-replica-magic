@@ -34,17 +34,25 @@ const CategoryDetail = () => {
                   <Link to={`/san-pham/${p.slug}`} className="block">
                     <h3 className="text-sm font-semibold group-hover:text-brand line-clamp-2 min-h-[2.5rem]">{p.name}</h3>
                   </Link>
-                  <QuoteDialog
-                    productName={p.name}
-                    trigger={
-                      <button
-                        type="button"
-                        className="mt-2 text-xs font-bold text-brand hover:text-brand-dark uppercase border border-brand rounded px-3 py-1"
-                      >
-                        Giá liên hệ
-                      </button>
-                    }
-                  />
+                  <div className="mt-2 flex items-center justify-center gap-2">
+                    <QuoteDialog
+                      productName={p.name}
+                      trigger={
+                        <button
+                          type="button"
+                          className="text-xs font-bold text-brand hover:text-brand-dark uppercase border border-brand rounded px-3 py-1"
+                        >
+                          Giá liên hệ
+                        </button>
+                      }
+                    />
+                    <Link
+                      to={`/san-pham/${p.slug}`}
+                      className="text-xs font-bold uppercase rounded px-3 py-1 bg-brand text-brand-foreground hover:bg-brand-dark"
+                    >
+                      Chi tiết
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
