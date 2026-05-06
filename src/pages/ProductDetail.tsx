@@ -3,6 +3,7 @@ import Layout from "@/components/vihem/Layout";
 import PageHero from "@/components/vihem/PageHero";
 import { findProduct, findCategory, productsByCategory } from "@/data/catalog";
 import { Phone, Mail } from "lucide-react";
+import QuoteDialog from "@/components/vihem/QuoteDialog";
 
 const ProductDetail = () => {
   const { slug = "" } = useParams();
@@ -21,7 +22,14 @@ const ProductDetail = () => {
           <div>
             <h1 className="text-2xl md:text-3xl font-extrabold text-brand uppercase">{p.name}</h1>
             <p className="mt-2 text-muted-foreground">Mã danh mục: <span className="text-foreground font-medium">{cat?.name}</span></p>
-            <div className="mt-4 inline-block px-4 py-2 bg-brand/10 text-brand font-bold rounded">Giá: Liên hệ</div>
+            <QuoteDialog
+              productName={p.name}
+              trigger={
+                <button type="button" className="mt-4 inline-block px-4 py-2 bg-brand/10 text-brand font-bold rounded hover:bg-brand hover:text-brand-foreground transition-colors">
+                  Giá: Liên hệ — Nhận báo giá
+                </button>
+              }
+            />
             <div className="mt-6 space-y-3 text-sm leading-relaxed">
               <p>Sản phẩm <strong>{p.name}</strong> do Vihem 1 sản xuất theo tiêu chuẩn Việt Nam – Hungari, ứng dụng rộng rãi trong các nhà máy, hầm mỏ, công trình thông gió và các hệ thống công nghiệp.</p>
               <ul className="list-disc list-inside text-muted-foreground space-y-1">
@@ -32,7 +40,12 @@ const ProductDetail = () => {
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="tel:0944177362" className="inline-flex items-center gap-2 bg-brand text-brand-foreground px-5 py-3 rounded font-semibold hover:bg-brand-dark"><Phone className="h-4 w-4" /> 0944 177 362</a>
-              <Link to="/lien-he" className="inline-flex items-center gap-2 border-2 border-brand text-brand px-5 py-3 rounded font-semibold hover:bg-brand hover:text-brand-foreground"><Mail className="h-4 w-4" /> Yêu cầu báo giá</Link>
+              <QuoteDialog
+                productName={p.name}
+                trigger={
+                  <button type="button" className="inline-flex items-center gap-2 border-2 border-brand text-brand px-5 py-3 rounded font-semibold hover:bg-brand hover:text-brand-foreground"><Mail className="h-4 w-4" /> Yêu cầu báo giá</button>
+                }
+              />
             </div>
           </div>
         </div>
