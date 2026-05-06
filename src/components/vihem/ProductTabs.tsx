@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { categories, productsByCategory } from "@/data/catalog";
+import QuoteDialog from "./QuoteDialog";
 
 const ProductTabs = () => {
   const tabs = categories;
@@ -34,7 +35,18 @@ const ProductTabs = () => {
               </div>
               <div className="p-3 text-center">
                 <h3 className="text-sm font-semibold text-foreground group-hover:text-brand line-clamp-2 min-h-[2.5rem]">{p.name}</h3>
-                <p className="text-xs text-muted-foreground mt-1">Giá liên hệ</p>
+                <QuoteDialog
+                  productName={p.name}
+                  trigger={
+                    <button
+                      type="button"
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                      className="mt-2 text-xs font-bold text-brand hover:text-brand-dark uppercase tracking-wide border border-brand rounded px-3 py-1"
+                    >
+                      Giá liên hệ
+                    </button>
+                  }
+                />
               </div>
             </Link>
           ))}
