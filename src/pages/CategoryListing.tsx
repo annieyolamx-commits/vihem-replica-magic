@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/vihem/Layout";
 import PageHero from "@/components/vihem/PageHero";
 import { categories, productsByCategory, Product } from "@/data/catalog";
+import QuoteDialog from "@/components/vihem/QuoteDialog";
 
 const ProductGrid = ({ items }: { items: Product[] }) => (
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -12,7 +13,18 @@ const ProductGrid = ({ items }: { items: Product[] }) => (
         </div>
         <div className="p-3 text-center">
           <h3 className="text-sm font-semibold group-hover:text-brand line-clamp-2 min-h-[2.5rem]">{p.name}</h3>
-          <p className="text-xs text-muted-foreground mt-1">Giá liên hệ</p>
+          <QuoteDialog
+            productName={p.name}
+            trigger={
+              <button
+                type="button"
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                className="mt-2 text-xs font-bold text-brand hover:text-brand-dark uppercase border border-brand rounded px-3 py-1"
+              >
+                Giá liên hệ
+              </button>
+            }
+          />
         </div>
       </Link>
     ))}
