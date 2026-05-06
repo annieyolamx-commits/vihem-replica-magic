@@ -7,18 +7,21 @@ import QuoteDialog from "@/components/vihem/QuoteDialog";
 const ProductGrid = ({ items }: { items: Product[] }) => (
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
     {items.map((p) => (
-      <Link key={p.slug} to={`/san-pham/${p.slug}`} className="group bg-card rounded-lg overflow-hidden border border-border hover:shadow-xl transition-all">
-        <div className="aspect-[4/3] bg-secondary flex items-center justify-center overflow-hidden">
-          <img src={p.img} alt={p.name} loading="lazy" className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform" />
-        </div>
-        <div className="p-3 text-center">
-          <h3 className="text-sm font-semibold group-hover:text-brand line-clamp-2 min-h-[2.5rem]">{p.name}</h3>
+      <div key={p.slug} className="group bg-card rounded-lg overflow-hidden border border-border hover:shadow-xl transition-all flex flex-col">
+        <Link to={`/san-pham/${p.slug}`} className="block">
+          <div className="aspect-[4/3] bg-secondary flex items-center justify-center overflow-hidden">
+            <img src={p.img} alt={p.name} loading="lazy" className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform" />
+          </div>
+        </Link>
+        <div className="p-3 text-center flex-1 flex flex-col items-center">
+          <Link to={`/san-pham/${p.slug}`} className="block">
+            <h3 className="text-sm font-semibold group-hover:text-brand line-clamp-2 min-h-[2.5rem]">{p.name}</h3>
+          </Link>
           <QuoteDialog
             productName={p.name}
             trigger={
               <button
                 type="button"
-                onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
                 className="mt-2 text-xs font-bold text-brand hover:text-brand-dark uppercase border border-brand rounded px-3 py-1"
               >
                 Giá liên hệ
@@ -26,7 +29,7 @@ const ProductGrid = ({ items }: { items: Product[] }) => (
             }
           />
         </div>
-      </Link>
+      </div>
     ))}
   </div>
 );
