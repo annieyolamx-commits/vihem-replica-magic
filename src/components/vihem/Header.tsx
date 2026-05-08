@@ -1,4 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
+import logoVihem from "@/assets/logo-vihem.png";
+import logoEcowind from "@/assets/logo-ecowind.png";
 
 const navItems: { label: string; to: string }[] = [
   { label: "TRANG CHỦ", to: "/" },
@@ -11,23 +13,42 @@ const navItems: { label: string; to: string }[] = [
 ];
 
 const Header = () => (
-  <header className="bg-brand text-brand-foreground sticky top-0 z-40 shadow-md">
-    <div className="container flex items-center gap-6 py-3">
-      <Link to="/" className="flex items-center gap-2 px-3 py-2">
-        <div className="font-black text-brand-foreground text-2xl tracking-tight">VIHEM<span className="text-brand-dark">1</span></div>
-        <div className="hidden md:block border-l border-brand-foreground/30 pl-2 text-[10px] text-brand-foreground/80 leading-tight">
-          <div className="font-semibold text-brand-foreground">ECO'WIND</div>
-          <div>Chất lượng tạo nên giá trị</div>
+  <header className="sticky top-0 z-40 shadow-md">
+    {/* Logo bar */}
+    <div className="bg-white border-b border-border">
+      <div className="container flex items-center justify-between gap-6 py-4">
+        <Link to="/" className="flex items-center gap-4 group">
+          <img
+            src={logoVihem}
+            alt="VIHEM1 - Chất lượng tạo nên giá trị"
+            className="h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105"
+          />
+          <div className="hidden sm:block h-12 w-px bg-border" />
+          <img
+            src={logoEcowind}
+            alt="ECO'WIND - Chất lượng tạo nên giá trị"
+            className="hidden sm:block h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+          />
+        </Link>
+        <div className="hidden md:flex flex-col items-end text-right">
+          <span className="text-xs uppercase tracking-widest text-muted-foreground">Hotline</span>
+          <a href="tel:0944177362" className="text-xl font-black text-brand leading-tight">
+            0944 177 362
+          </a>
         </div>
-      </Link>
-      <nav className="hidden lg:flex items-center gap-1 ml-auto">
+      </div>
+    </div>
+
+    {/* Nav bar */}
+    <div className="bg-brand text-brand-foreground">
+      <nav className="container hidden lg:flex items-center gap-1 py-1">
         {navItems.map((item) => (
           <NavLink
             key={item.to}
             to={item.to}
             end={item.to === "/"}
             className={({ isActive }) =>
-              `px-3 py-2 text-sm font-semibold uppercase tracking-wide rounded transition-colors ${
+              `px-4 py-3 text-sm font-semibold uppercase tracking-wide transition-colors ${
                 isActive ? "bg-brand-dark" : "hover:bg-brand-dark"
               }`
             }
@@ -36,6 +57,7 @@ const Header = () => (
           </NavLink>
         ))}
       </nav>
+      <div className="container lg:hidden py-2 text-sm font-semibold uppercase">Menu</div>
     </div>
   </header>
 );
