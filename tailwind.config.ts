@@ -56,6 +56,11 @@ export default {
           DEFAULT: "hsl(var(--topbar))",
           foreground: "hsl(var(--topbar-foreground))",
         },
+        gold: "hsl(var(--gold))",
+        steel: {
+          DEFAULT: "hsl(var(--steel))",
+          2: "hsl(var(--steel-2))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -66,6 +71,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        sans: ['Barlow', 'system-ui', 'sans-serif'],
+        display: ['"Bebas Neue"', '"Barlow Condensed"', 'sans-serif'],
+        condensed: ['"Barlow Condensed"', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
