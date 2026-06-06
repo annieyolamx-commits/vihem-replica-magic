@@ -1,19 +1,23 @@
 import Layout from "@/components/vihem/Layout";
-import Hero from "@/components/vihem/Hero";
-import About from "@/components/vihem/About";
-import Categories from "@/components/vihem/Categories";
-import ProductTabs from "@/components/vihem/ProductTabs";
-import News from "@/components/vihem/News";
-import Partners from "@/components/vihem/Partners";
+import HeroIndustrial from "@/components/vihem/HeroIndustrial";
+import Ticker from "@/components/vihem/Ticker";
+import AboutIndustrial from "@/components/vihem/AboutIndustrial";
+import ParallaxBand from "@/components/vihem/ParallaxBand";
+import ProductsIndustrial from "@/components/vihem/ProductsIndustrial";
+import Achievements from "@/components/vihem/Achievements";
+import Industries from "@/components/vihem/Industries";
+import ContactCTA from "@/components/vihem/ContactCTA";
 
 const Index = () => (
   <Layout>
-    <Hero />
-    <About />
-    <Categories />
-    <ProductTabs />
-    <News />
-    <Partners />
+    <HeroIndustrial />
+    <Ticker />
+    <AboutIndustrial />
+    <ParallaxBand />
+    <ProductsIndustrial />
+    <Achievements />
+    <Industries />
+    <ContactCTA />
   </Layout>
 );
 
