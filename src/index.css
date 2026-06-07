@@ -116,9 +116,21 @@ All colors MUST be HSL.
     font-feature-settings: "ss01", "ss02";
   }
 
-  h1, h2, h3, .font-display {
+  h1, h2, h3, h4, .font-display {
     font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
     letter-spacing: 0.04em;
+    font-weight: 400;
+  }
+
+  h5, h6 {
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.02em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  button, .btn, input, select, textarea {
+    font-family: 'Barlow', system-ui, sans-serif;
   }
 }
 
