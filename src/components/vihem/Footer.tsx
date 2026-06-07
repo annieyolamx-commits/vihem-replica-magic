@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Facebook, Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => (
-  <footer className="bg-black text-foreground border-t border-brand/30">
+  <footer className="bg-topbar text-topbar-foreground border-t border-brand/30">
     <div className="container-wide pt-16 pb-8">
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
