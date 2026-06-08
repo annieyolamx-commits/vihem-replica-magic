@@ -14,6 +14,7 @@ import NewsDetail from "./pages/NewsDetail.tsx";
 import LienHe from "./pages/LienHe.tsx";
 import CategoryDetail from "./pages/CategoryDetail.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
+import Catalogue2026 from "./pages/Catalogue2026.tsx";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/lien-he" element={<LienHe />} />
           <Route path="/danh-muc/:slug" element={<CategoryDetail />} />
           <Route path="/san-pham/:slug" element={<ProductDetail />} />
+          <Route path="/catalogue-2026" element={<Catalogue2026 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

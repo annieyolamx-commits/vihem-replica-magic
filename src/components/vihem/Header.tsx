@@ -8,6 +8,7 @@ const navItems: { label: string; to: string }[] = [
   { label: "Động cơ – Bơm", to: "/dong-co-bom" },
   { label: "Thông gió", to: "/he-thong-thong-gio" },
   { label: "Dịch vụ", to: "/dich-vu" },
+  { label: "Catalogue", to: "/catalogue-2026" },
   { label: "Tin tức", to: "/tin-tuc" },
   { label: "Liên hệ", to: "/lien-he" },
 ];
